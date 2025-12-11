@@ -39,3 +39,58 @@ cd shifthero-mvp
 
 # Run with Docker Compose
 docker compose up --build
+```
+Access the app at http://localhost:8501
+
+Option 2: Standard Python (Windows/Linux/Intel Mac)
+
+```bash
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+streamlit run app.py
+```
+📖 How to Use
+
+1) Staff & Rules: Enter your employees in the "Staff List". Use the "Availability Exceptions" tab to block off specific shifts (e.g., "Bob is off Tuesday").
+2) Define Demand: Set how many staff you need for Morning, Lunch, and Dinner in the "Demand" table.
+3) Role Rules: (Optional) In the sidebar, set minimum counts (e.g., "Manager: 1") to ensure leadership coverage.
+4) Generate: Click the 🚀 button.
+5) Refine: If the "Scorecard" shows a high penalty, check the breakdown (Understaffing vs. Missing Roles) and adjust your inputs.
+
+☁️ Deployment
+This app is ready for Streamlit Community Cloud.
+
+1) Fork this repo.
+2) Log in to share.streamlit.io.
+3) Select the repo and deploy!
+
+📄 License
+This project is open-source. Feel free to use it for your own business!
+
+### 3. Final Checklist Before "Push"
+
+1.  **`requirements.txt`**: Ensure it looks exactly like this (critical for the cloud):
+    ```text
+    streamlit>=1.28.0
+    pandas>=2.0.0
+    ortools>=9.7.0
+    pydantic>=2.0.0
+    plotly
+    numpy
+    ```
+2.  **`.gitignore`**: Create a file named `.gitignore` and add these lines so you don't upload junk files:
+    ```text
+    venv/
+    __pycache__/
+    .DS_Store
+    *.pyc
+    *.json
+    *.csv
+    ```
+Once you push this, your project is officially "Portfolio Ready" and "Deploy Ready."
